@@ -1,0 +1,41 @@
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    min-width: 120px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #d1d5db;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.step.active .circle {
+    background: #2563eb;
+}
+
+.step.completed .circle {
+    background: #16a34a;
+}
+
+.step span {
+    font-size: 15px;
+    font-weight: 500;
+}

@@ -1,0 +1,52 @@
+.employee-page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 30px;
+    color: #1e293b;
+}
+
+.page-header p {
+    color: gray;
+}
+
+.form-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    min-height: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.navigation-buttons button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+}
+
+.navigation-buttons button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
