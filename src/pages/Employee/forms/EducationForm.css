@@ -1,0 +1,247 @@
+.education-form {
+  width: 100%;
+}
+
+/* ========================================
+   TOP INFORMATION SECTION
+======================================== */
+
+.education-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.education-intro h3 {
+  margin: 0 0 7px;
+  color: #172033;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.education-intro p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.education-badge {
+  flex-shrink: 0;
+  padding: 9px 16px;
+  border-radius: 30px;
+
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ========================================
+   SKILL SECTION
+======================================== */
+
+.education-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skill-field {
+  padding: 18px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skill-field:hover {
+  border-color: #cbd5e1;
+
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   LANGUAGE SECTION
+======================================== */
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.language-card {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.language-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cbd5e1;
+
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.language-permissions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-top: 15px;
+  padding-top: 15px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.language-permissions label {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.language-permissions input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+
+  cursor: pointer;
+
+  accent-color: #2563eb;
+}
+
+/* ========================================
+   TEXTAREA
+======================================== */
+
+.education-textarea-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.education-textarea-group:last-child {
+  margin-bottom: 0;
+}
+
+.education-textarea-group label {
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.education-textarea-group textarea {
+  width: 100%;
+  min-height: 110px;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+
+  outline: none;
+
+  resize: vertical;
+
+  background: #ffffff;
+
+  color: #1e293b;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.education-textarea-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.education-textarea-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+  .education-skill-grid,
+  .language-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .education-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-badge {
+    align-self: flex-start;
+  }
+
+  .education-skill-grid,
+  .language-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-intro h3 {
+    font-size: 18px;
+  }
+
+  .skill-field,
+  .language-card {
+    padding: 15px;
+  }
+
+  .language-permissions {
+    gap: 12px;
+  }
+}

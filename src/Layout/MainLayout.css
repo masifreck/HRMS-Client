@@ -1,0 +1,41 @@
+.layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f5f7fb;
+}
+
+.layout-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Main Area */
+.layout-content {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    transition: all .3s ease;
+
+    background: #f5f7fb;
+
+}
+
+/* Sidebar expanded */
+.layout-content.sidebar-open{
+
+  /* margin-left: 270px; */
+
+}
+
+/* Sidebar collapsed */
+.layout-content.sidebar-close{
+
+    margin-left: 80px;
+
+}

@@ -1,0 +1,49 @@
+.dashboard{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+    width:100%;
+
+}
+.dashboard-row{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:24px;
+
+}
+
+@media(max-width:1100px){
+
+.dashboard-row{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:22px;
+
+}
+
+@media(max-width:768px){
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
