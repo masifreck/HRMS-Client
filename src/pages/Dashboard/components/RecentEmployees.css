@@ -1,0 +1,213 @@
+.recent-employees-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 22px;
+
+  padding: 24px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.recent-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.recent-header h3 {
+  margin: 0;
+
+  font-size: 19px;
+
+  color: #111827;
+}
+
+.recent-header p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+.view-all-btn {
+  border: none;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  padding: 9px 14px;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.view-all-btn:hover {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.employee-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.employee-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 850px;
+}
+
+.employee-table th {
+  text-align: left;
+
+  padding: 13px 12px;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+
+  color: #9ca3af;
+
+  background: #f9fafb;
+
+  font-weight: 700;
+}
+
+.employee-table td {
+  padding: 16px 12px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  color: #4b5563;
+
+  font-size: 13px;
+}
+
+.employee-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.employee-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.employee-avatar {
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: #eaf2ff;
+
+  color: #2563eb;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 700;
+
+  font-size: 13px;
+}
+
+.employee-info h4 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 14px;
+}
+
+.employee-info span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+.employee-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  background: #ecfdf5;
+
+  color: #15803d;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+.employee-more {
+  border: none;
+
+  background: transparent;
+
+  color: #9ca3af;
+
+  cursor: pointer;
+
+  font-size: 17px;
+}
+
+.employee-more:hover {
+  color: #2563eb;
+}

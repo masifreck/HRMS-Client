@@ -1,0 +1,157 @@
+.birthday-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.birthday-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.birthday-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.birthday-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff1f2;
+  color: #e11d48;
+
+  font-size: 21px;
+}
+
+.birthday-title h3 {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.birthday-title p {
+  margin: 4px 0 0;
+
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.birthday-view-btn {
+  border: none;
+
+  background: #fff1f2;
+  color: #e11d48;
+
+  padding: 9px 12px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.birthday-view-btn:hover {
+  background: #e11d48;
+  color: #ffffff;
+}
+
+.birthday-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.birthday-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.birthday-item:last-child {
+  border-bottom: none;
+}
+
+.birthday-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: #fff1f2;
+  color: #e11d48;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.birthday-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.birthday-info h4 {
+  margin: 0;
+
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.birthday-info p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+  color: #9ca3af;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.birthday-date {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #f3f4f6;
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.birthday-date.today {
+  background: #fff1f2;
+  color: #e11d48;
+}

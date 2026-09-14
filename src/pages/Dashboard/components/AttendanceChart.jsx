@@ -1,97 +1,171 @@
 import React from "react";
 import Chart from "react-apexcharts";
+
+import {
+  BsGraphUpArrow,
+} from "react-icons/bs";
+
+import {
+  dashboardPeriodData,
+} from "./DashboardData";
+
 import "./AttendanceChart.css";
 
-function AttendanceChart() {
+function AttendanceChart({
+  selectedPeriod = "This Week",
+}) {
+  const periodData =
+    dashboardPeriodData[selectedPeriod]?.attendance ||
+    dashboardPeriodData["This Week"].attendance;
 
-    const options = {
+  const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
 
-        chart: {
-            toolbar: {
-                show: false,
+      zoom: {
+        enabled: false,
+      },
+
+      fontFamily: "inherit",
+    },
+
+    stroke: {
+      curve: "smooth",
+      width: 4,
+    },
+
+    colors: ["#2563EB"],
+
+    xaxis: {
+      categories: periodData.categories,
+
+      labels: {
+        style: {
+          colors: "#9CA3AF",
+          fontSize: "11px",
+        },
+      },
+
+      axisBorder: {
+        show: false,
+      },
+
+      axisTicks: {
+        show: false,
+      },
+    },
+
+    yaxis: {
+      min: 70,
+      max: 100,
+
+      labels: {
+        formatter: (value) => `${value}%`,
+
+        style: {
+          colors: "#9CA3AF",
+          fontSize: "11px",
+        },
+      },
+    },
+
+    dataLabels: {
+      enabled: false,
+    },
+
+    grid: {
+      borderColor: "#ECECEC",
+
+      strokeDashArray: 4,
+    },
+
+    tooltip: {
+      theme: "light",
+
+      y: {
+        formatter: (value) => `${value}%`,
+      },
+    },
+
+    markers: {
+      size: 4,
+
+      strokeWidth: 2,
+
+      hover: {
+        size: 6,
+      },
+    },
+
+    responsive: [
+      {
+        breakpoint: 600,
+
+        options: {
+          chart: {
+            height: 260,
+          },
+
+          xaxis: {
+            labels: {
+              rotate: -35,
             },
-            zoom: {
-                enabled: false,
-            },
+          },
         },
+      },
+    ],
+  };
 
-        stroke: {
-            curve: "smooth",
-            width: 4,
-        },
+  const series = [
+    {
+      name: "Attendance",
+      data: periodData.values,
+    },
+  ];
 
-        colors: ["#2563EB"],
+  return (
+    <div className="chart-card">
 
-        xaxis: {
-            categories: [
-                "Mon",
-                "Tue",
-                "Wed",
-                "Thu",
-                "Fri",
-                "Sat",
-                "Sun",
-            ],
-        },
+      <div className="chart-header">
 
-        dataLabels: {
-            enabled: false,
-        },
+        <div className="chart-title">
 
-        grid: {
-            borderColor: "#ECECEC",
-        },
+          <div className="chart-title-icon">
+            <BsGraphUpArrow />
+          </div>
 
-        tooltip: {
-            theme: "light",
-        },
+          <div>
+            <h3>Attendance Trend</h3>
 
-    };
-
-    const series = [
-
-        {
-
-            name: "Attendance",
-
-            data: [92, 95, 90, 98, 97, 88, 94],
-
-        },
-
-    ];
-
-    return (
-
-        <div className="chart-card">
-
-            <div className="chart-header">
-
-                <h3>Attendance Trend</h3>
-
-                <button>
-
-                    This Week
-
-                </button>
-
-            </div>
-
-            <Chart
-
-                options={options}
-
-                series={series}
-
-                type="line"
-
-                height={320}
-
-            />
+            <p>
+              Employee attendance performance
+            </p>
+          </div>
 
         </div>
 
-    );
+        <span className="chart-period">
+          {selectedPeriod}
+        </span>
 
+      </div>
+
+      <div className="attendance-chart-wrapper">
+
+        <Chart
+          options={options}
+          series={series}
+          type="line"
+          height={320}
+          width="100%"
+        />
+
+      </div>
+
+    </div>
+  );
 }
 
 export default AttendanceChart;

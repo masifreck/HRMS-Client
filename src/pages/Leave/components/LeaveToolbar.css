@@ -1,0 +1,162 @@
+.leave-toolbar {
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 14px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.leave-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.leave-search-box {
+  width: 230px;
+  height: 40px;
+  border: 1px solid #dbe2ea;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.leave-search-box svg {
+  color: #94a3b8;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.leave-search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #334155;
+  font-size: 13px;
+  background: transparent;
+}
+
+.leave-search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.leave-filter-select {
+  height: 40px;
+  min-width: 145px;
+  padding: 0 11px;
+  border: 1px solid #dbe2ea;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.leave-filter-select:focus {
+  border-color: #2563eb;
+}
+
+.leave-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leave-secondary-button,
+.leave-primary-button {
+  height: 40px;
+  border-radius: 9px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.leave-secondary-button {
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  color: #475569;
+}
+
+.leave-secondary-button:hover {
+  border-color: #bfdbfe;
+  color: #2563eb;
+  background: #f8fbff;
+}
+
+.leave-primary-button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.leave-primary-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+@media (max-width: 1200px) {
+  .leave-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .leave-toolbar-left {
+    width: 100%;
+  }
+
+  .leave-toolbar-right {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 800px) {
+  .leave-toolbar-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leave-search-box {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+
+  .leave-filter-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .leave-toolbar {
+    padding: 12px;
+  }
+
+  .leave-toolbar-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leave-primary-button {
+    grid-column: 1 / -1;
+  }
+
+  .leave-secondary-button {
+    width: 100%;
+  }
+}

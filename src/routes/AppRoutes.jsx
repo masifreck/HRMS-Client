@@ -7,7 +7,12 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import EmployeeList from "../pages/Employee/EmployeeList";
 
 import AddEmployee from "../pages/Employee/AddEmployee";
+import EmployeeDetails from "../pages/Employee/EmployeeDetails";
+import Attendance from "../pages/Attendance/Attendance";
+import AttendanceEmployeeDetails
+  from "../pages/Attendance/components/AttendanceEmployeeDetails";
 
+import Leave from "../pages/Leave/Leave";
 function AppRoutes() {
 
     return (
@@ -33,6 +38,25 @@ function AppRoutes() {
                         element={<AddEmployee />}
                     />
 
+  <Route
+  path="/employees/:id"
+  element={<EmployeeDetails />}
+/>
+
+<Route
+  path="/attendance"
+  element={<Attendance />}
+/>
+
+<Route
+  path="/attendance/employee/:id"
+  element={<AttendanceEmployeeDetails />}
+/>
+
+<Route
+  path="/leave"
+  element={<Leave />}
+/>
                 </Route>
 
             </Routes>

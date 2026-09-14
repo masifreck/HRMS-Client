@@ -1,49 +1,138 @@
-.dashboard{
+.dashboard {
+  display: flex;
 
-    display:flex;
+  flex-direction: column;
 
-    flex-direction:column;
+  gap: 28px;
 
-    gap:28px;
+  width: 100%;
 
-    width:100%;
-
-}
-.dashboard-row{
-
-display:grid;
-
-grid-template-columns:2fr 1fr;
-
-gap:24px;
-
+  min-width: 0;
 }
 
-@media(max-width:1100px){
 
-.dashboard-row{
+/* ================================= */
+/* Statistics */
+/* ================================= */
 
-grid-template-columns:1fr;
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  width: 100%;
+}
+
+
+/* ================================= */
+/* Dashboard Rows */
+/* ================================= */
+
+.dashboard-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(300px, 1fr);
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+.dashboard-row-secondary {
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(300px, 1fr);
+}
+
+
+/* ================================= */
+/* Bottom Information Cards */
+/* ================================= */
+
+.dashboard-info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+
+/* ================================= */
+/* Large Tablet / Small Laptop */
+/* ================================= */
+
+@media (max-width: 1200px) {
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
 }
 
-}
-.stats-grid{
 
-    display:grid;
+/* ================================= */
+/* Tablet */
+/* ================================= */
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+@media (max-width: 1000px) {
 
-    gap:22px;
-
-}
-
-@media(max-width:768px){
-
-.stats-grid{
-
-grid-template-columns:1fr;
+  .dashboard-row,
+  .dashboard-row-secondary {
+    grid-template-columns: 1fr;
+  }
 
 }
+
+
+/* ================================= */
+/* Mobile */
+/* ================================= */
+
+@media (max-width: 700px) {
+
+  .dashboard {
+    gap: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .dashboard-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .dashboard-row,
+  .dashboard-row-secondary {
+    gap: 16px;
+  }
+
+}
+
+
+/* ================================= */
+/* Small Mobile */
+/* ================================= */
+
+@media (max-width: 400px) {
+
+  .dashboard {
+    gap: 16px;
+  }
 
 }

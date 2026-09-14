@@ -1,0 +1,178 @@
+.pending-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.pending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.pending-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pending-title-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #fff7ed;
+  color: #f97316;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+}
+
+.pending-title h3 {
+  margin: 0;
+  font-size: 19px;
+  color: #111827;
+}
+
+.pending-title p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.pending-total {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fff7ed;
+  color: #ea580c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.approval-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.approval-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 15px 8px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.approval-item:last-child {
+  border-bottom: none;
+}
+
+.approval-item:hover {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.approval-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.approval-icon.leave {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.approval-icon.attendance {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.approval-icon.loan {
+  background: #fefce8;
+  color: #ca8a04;
+}
+
+.approval-icon.expense {
+  background: #faf5ff;
+  color: #9333ea;
+}
+
+.approval-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.approval-info h4 {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #1f2937;
+}
+
+.approval-info p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+
+  color: #9ca3af;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.approval-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #9ca3af;
+}
+
+.approval-action span {
+  min-width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  color: #374151;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.approval-action svg {
+  transition: 0.25s ease;
+}
+
+.approval-item:hover .approval-action svg {
+  color: #2563eb;
+  transform: translateX(4px);
+}

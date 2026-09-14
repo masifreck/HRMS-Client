@@ -1,85 +1,194 @@
+import React, { useState } from "react";
+
 import "./Dashboard.css";
 
+import DashboardToolbar from "./components/DashboardToolbar";
 import WelcomeCard from "./components/WelcomeCard";
 import StatCard from "./components/StatCard";
 import AttendanceChart from "./components/AttendanceChart";
-
 import DepartmentChart from "./components/DepartmentChart";
+import PendingApproval from "./components/PendingApproval";
+import RecentEmployees from "./components/RecentEmployees";
+import BirthdayCard from "./components/BirthdayCard";
+import HolidayCard from "./components/HolidayCard";
+import AnnouncementCard from "./components/AnnouncementCard";
+import QuickActions from "./components/QuickActions";
 
 import {
-    BsPeopleFill,
-    BsCalendarCheck,
-    BsCalendar2CheckFill,
-    BsCashStack,
+  BsPeopleFill,
+  BsCalendarCheck,
+  BsCalendar2CheckFill,
+  BsCashStack,
 } from "react-icons/bs";
+
+import {
+  dashboardStats,
+} from "./components/DashboardData";
 
 function Dashboard() {
 
-    const stats = [
+  const [dateRange, setDateRange] =
+    useState("This Month");
 
-        {
-            title: "Total Employees",
-            value: "1,248",
-            change: "+18%",
-            color: "#2563EB",
-            icon: BsPeopleFill,
-        },
+  const [refreshing, setRefreshing] =
+    useState(false);
 
-        {
-            title: "Present Today",
-            value: "1,172",
-            change: "94%",
-            color: "#16A34A",
-            icon: BsCalendarCheck,
-        },
+  const [lastUpdated, setLastUpdated] =
+    useState("Just now");
 
-        {
-            title: "On Leave",
-            value: "38",
-            change: "Pending 6",
-            color: "#F59E0B",
-            icon: BsCalendar2CheckFill,
-        },
 
-        {
-            title: "Monthly Payroll",
-            value: "₹84.5L",
-            change: "Completed",
-            color: "#7C3AED",
-            icon: BsCashStack,
-        },
+  // ==========================================
+  // Icon Mapping
+  // ==========================================
 
-    ];
+  const iconMap = {
+    employees: BsPeopleFill,
+    attendance: BsCalendarCheck,
+    leave: BsCalendar2CheckFill,
+    payroll: BsCashStack,
+  };
 
-    return (
 
-        <div className="dashboard">
+  // ==========================================
+  // Refresh Dashboard
+  // ==========================================
 
-            <WelcomeCard />
+  const handleRefresh = () => {
 
-            <div className="stats-grid">
+    if (refreshing) {
+      return;
+    }
 
-                {stats.map((item, index) => (
+    setRefreshing(true);
 
-                    <StatCard
-                        key={index}
-                        {...item}
-                    />
+    setTimeout(() => {
 
-                ))}
+      setRefreshing(false);
 
-            </div>
-<div className="dashboard-row">
+      const currentTime =
+        new Date().toLocaleTimeString(
+          "en-IN",
+          {
+            hour: "2-digit",
+            minute: "2-digit",
+          }
+        );
 
-    <AttendanceChart/>
+      setLastUpdated(currentTime);
 
-    <DepartmentChart/>
+    }, 1000);
+  };
 
-</div>
-        </div>
 
-    );
+  // ==========================================
+  // Date Range Change
+  // ==========================================
 
+  const handleDateRangeChange = (value) => {
+
+    setDateRange(value);
+
+    setLastUpdated("Just now");
+  };
+
+
+  return (
+    <div className="dashboard">
+
+      {/* ================================= */}
+      {/* Toolbar */}
+      {/* ================================= */}
+
+      <DashboardToolbar
+        dateRange={dateRange}
+        onDateRangeChange={handleDateRangeChange}
+        onRefresh={handleRefresh}
+        refreshing={refreshing}
+        lastUpdated={lastUpdated}
+      />
+
+
+      {/* ================================= */}
+      {/* Welcome */}
+      {/* ================================= */}
+
+      <WelcomeCard />
+
+
+      {/* ================================= */}
+      {/* Statistics */}
+      {/* ================================= */}
+
+      <div className="stats-grid">
+
+        {dashboardStats.map((item) => {
+
+          const Icon = iconMap[item.icon];
+
+          return (
+            <StatCard
+              key={item.id}
+              {...item}
+              icon={Icon}
+            />
+          );
+
+        })}
+
+      </div>
+
+
+      {/* ================================= */}
+      {/* Charts */}
+      {/* ================================= */}
+
+      <div className="dashboard-row">
+
+        <AttendanceChart
+          selectedPeriod={dateRange}
+        />
+
+        <DepartmentChart />
+
+      </div>
+
+
+      {/* ================================= */}
+      {/* Employees + Approvals */}
+      {/* ================================= */}
+
+      <div className="dashboard-row dashboard-row-secondary">
+
+        <RecentEmployees />
+
+        <PendingApproval />
+
+      </div>
+
+
+      {/* ================================= */}
+      {/* Information */}
+      {/* ================================= */}
+
+      <div className="dashboard-info-grid">
+
+        <BirthdayCard />
+
+        <HolidayCard />
+
+        <AnnouncementCard />
+
+      </div>
+
+
+      {/* ================================= */}
+      {/* Quick Actions */}
+      {/* ================================= */}
+
+      <QuickActions />
+
+    </div>
+  );
 }
 
 export default Dashboard;
