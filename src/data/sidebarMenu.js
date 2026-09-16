@@ -16,7 +16,7 @@ import {
   BsPersonLinesFill,
   BsFileEarmarkTextFill,
   BsBank,
-  BsGearFill,
+  BsGearFill,BsDiagram3Fill
 } from "react-icons/bs";
 
 const sidebarMenu = [
@@ -118,53 +118,46 @@ const sidebarMenu = [
   },
 
   {
-    section: "MASTERS",
-
-    items: [
-      {
-        title: "Masters",
-        icon: BsListTask,
-
-        children: [
-          {
-            title: "Branch",
-            icon: BsBuilding,
-            path: "/masters/branch",
-          },
-
-          {
-            title: "Department",
-            icon: BsDiagram3,
-            path: "/masters/department",
-          },
-
-          {
-            title: "Designation",
-            icon: BsPersonBadge,
-            path: "/masters/designation",
-          },
-
-          {
-            title: "Shift",
-            icon: BsClock,
-            path: "/masters/shift",
-          },
-
-          {
-            title: "Leave Type",
-            icon: BsCalendar2CheckFill,
-            path: "/masters/leave-type",
-          },
-
-          {
-            title: "Bank",
-            icon: BsBank,
-            path: "/masters/bank",
-          },
-        ],
-      },
-    ],
-  },
+  title: "Masters",
+  icon: BsListTask,
+  children: [
+    {
+      title: "Branch",
+      icon: BsBuilding,
+      path: "/masters/branch",
+    },
+    {
+      title: "Department",
+      icon: BsDiagram3,
+      path: "/masters/department",
+    },
+    {
+      title: "Designation",
+      icon: BsPersonBadge,
+      path: "/masters/designation",
+    },
+    {
+      title: "Shift",
+      icon: BsClock,
+      path: "/masters/shift",
+    },
+    {
+      title: "Leave Type",
+      icon: BsCalendar2CheckFill,
+      path: "/masters/leave-type",
+    },
+    {
+      title: "Leave Workflow",
+      icon: BsDiagram3Fill,
+      path: "/masters/leave-workflow",
+    },
+    {
+      title: "Bank",
+      icon: BsBank,
+      path: "/masters/bank",
+    },
+  ],
+},
 
   {
     section: "SYSTEM",

@@ -12,7 +12,7 @@ import {
 import LeaveToolbar from "./components/LeaveToolbar";
 import LeaveSummary from "./components/LeaveSummary";
 import leaveData from "./components/LeaveData";
-
+import LeaveCalendar from "./components/LeaveCalendar";
 import "./Leave.css";
 
 const Leave = () => {
@@ -178,18 +178,16 @@ const Leave = () => {
       {/* ================= TOOLBAR ================= */}
 
       <LeaveToolbar
-        search={search}
-        setSearch={handleSearch}
-        department={department}
-        setDepartment={handleDepartment}
-        leaveType={leaveType}
-        setLeaveType={handleLeaveType}
-        status={status}
-        setStatus={handleStatus}
-        onAddLeave={() =>
-          alert("Apply Leave screen will be added next.")
-        }
-      />
+  search={search}
+  setSearch={setSearch}
+  department={department}
+  setDepartment={setDepartment}
+  leaveType={leaveType}
+  setLeaveType={setLeaveType}
+  status={status}
+  setStatus={setStatus}
+  onAddLeave={() => navigate("/leave/apply")}
+/>
 
       {/* ================= TABLE ================= */}
 
@@ -518,7 +516,7 @@ const Leave = () => {
         )}
 
       </section>
-
+<LeaveCalendar />
     </div>
   );
 };

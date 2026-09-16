@@ -13,7 +13,7 @@ import {
   BsDownload,
 } from "react-icons/bs";
 
-import attendanceData from "./AttendanceData";
+import { attendanceData } from "./AttendanceData";
 import "./AttendanceEmployeeDetails.css";
 
 const AttendanceEmployeeDetails = () => {
