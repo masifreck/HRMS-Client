@@ -16,13 +16,16 @@ import {
   BsPersonLinesFill,
   BsFileEarmarkTextFill,
   BsBank,
-  BsGearFill,BsDiagram3Fill
+  BsGearFill,
+  BsDiagram3Fill,
 } from "react-icons/bs";
 
 const sidebarMenu = [
+  // =========================
+  // MAIN
+  // =========================
   {
     section: "MAIN",
-
     items: [
       {
         title: "Dashboard",
@@ -32,27 +35,26 @@ const sidebarMenu = [
     ],
   },
 
+  // =========================
+  // EMPLOYEE
+  // =========================
   {
     section: "EMPLOYEE",
-
     items: [
       {
         title: "Employee",
         icon: BsPeopleFill,
-
         children: [
           {
             title: "Employee List",
             icon: BsPersonLinesFill,
             path: "/employees",
           },
-
           {
             title: "Add Employee",
             icon: BsPersonPlusFill,
             path: "/employees/add",
           },
-
           {
             title: "Documents",
             icon: BsFileEarmarkTextFill,
@@ -63,22 +65,22 @@ const sidebarMenu = [
     ],
   },
 
+  // =========================
+  // HR
+  // =========================
   {
     section: "HR",
-
     items: [
       {
         title: "Attendance",
         icon: BsCalendarCheck,
         path: "/attendance",
       },
-
       {
         title: "Leave",
         icon: BsCalendar2CheckFill,
         path: "/leave",
       },
-
       {
         title: "Holiday",
         icon: BsCalendarEvent,
@@ -87,16 +89,17 @@ const sidebarMenu = [
     ],
   },
 
+  // =========================
+  // PAYROLL
+  // =========================
   {
     section: "PAYROLL",
-
     items: [
       {
         title: "Payroll",
         icon: BsCashStack,
         path: "/payroll",
       },
-
       {
         title: "Reimbursements",
         icon: BsWallet2,
@@ -105,9 +108,11 @@ const sidebarMenu = [
     ],
   },
 
+  // =========================
+  // REPORTS
+  // =========================
   {
     section: "REPORTS",
-
     items: [
       {
         title: "Reports",
@@ -117,48 +122,67 @@ const sidebarMenu = [
     ],
   },
 
+  // =========================
+  // MASTERS
+  // =========================
   {
-  title: "Masters",
-  icon: BsListTask,
-  children: [
-    {
-      title: "Branch",
-      icon: BsBuilding,
-      path: "/masters/branch",
-    },
-    {
-      title: "Department",
-      icon: BsDiagram3,
-      path: "/masters/department",
-    },
-    {
-      title: "Designation",
-      icon: BsPersonBadge,
-      path: "/masters/designation",
-    },
-    {
-      title: "Shift",
-      icon: BsClock,
-      path: "/masters/shift",
-    },
-    {
-      title: "Leave Type",
-      icon: BsCalendar2CheckFill,
-      path: "/masters/leave-type",
-    },
-    {
-      title: "Leave Workflow",
-      icon: BsDiagram3Fill,
-      path: "/masters/leave-workflow",
-    },
-    {
-      title: "Bank",
-      icon: BsBank,
-      path: "/masters/bank",
-    },
-  ],
-},
+    section: "MASTERS",
 
+    items: [
+      {
+        title: "Masters",
+        icon: BsListTask,
+
+        children: [
+          {
+            title: "Branch",
+            icon: BsBuilding,
+            path: "/masters/branch",
+          },
+
+          {
+            title: "Department",
+            icon: BsDiagram3,
+            path: "/masters/department",
+          },
+
+          {
+            title: "Designation",
+            icon: BsPersonBadge,
+            path: "/masters/designation",
+          },
+
+          {
+            title: "Shift",
+            icon: BsClock,
+            path: "/masters/shift",
+          },
+
+          {
+            title: "Leave Type",
+            icon: BsCalendar2CheckFill,
+            path: "/masters/leave-type",
+          },
+
+          {
+            title: "Leave Workflow",
+            icon: BsDiagram3Fill,
+            path: "/masters/leave-workflow",
+          },
+
+          {
+            title: "Bank",
+            icon: BsBank,
+            path: "/masters/bank",
+          },
+        ],
+      },
+    ],
+  },
+
+  // =========================
+  // SYSTEM
+  // =========================
   {
     section: "SYSTEM",
 

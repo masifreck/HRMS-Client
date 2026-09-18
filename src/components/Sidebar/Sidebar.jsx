@@ -9,9 +9,9 @@ import sidebarMenu from "../../data/sidebarMenu";
 import "./Sidebar.css";
 
 function Sidebar({ sidebarOpen }) {
-
   const [openMenus, setOpenMenus] = useState({
     Employee: true,
+    Masters: true,
   });
 
   const toggleMenu = (title) => {
@@ -22,180 +22,175 @@ function Sidebar({ sidebarOpen }) {
   };
 
   return (
-    <aside
-      className={`sidebar ${
-        sidebarOpen ? "" : "collapsed"
-      }`}
-    >
-
+    <aside className={`sidebar ${sidebarOpen ? "" : "collapsed"}`}>
       <div className="sidebar-content">
 
-        {sidebarMenu.map((section) => (
+        {sidebarMenu?.map((section) => {
 
-          <div
-            className="sidebar-section"
-            key={section.section}
-          >
+          // Safety check
+          if (!section?.items || !Array.isArray(section.items)) {
+            return null;
+          }
 
-            {sidebarOpen && (
-              <p className="sidebar-heading">
-                {section.section}
-              </p>
-            )}
+          return (
+            <div
+              className="sidebar-section"
+              key={section.section}
+            >
+              {/* Section Heading */}
+              {sidebarOpen && section.section && (
+                <p className="sidebar-heading">
+                  {section.section}
+                </p>
+              )}
 
-            {section.items.map((item) => {
+              {section.items.map((item) => {
 
-              const Icon = item.icon;
+                // Safety check
+                if (!item) {
+                  return null;
+                }
 
-              if (item.children) {
+                const Icon = item.icon;
 
-                return (
+                {/* =========================
+                    MENU WITH CHILDREN
+                ========================= */}
+                if (
+                  item.children &&
+                  Array.isArray(item.children)
+                ) {
+                  return (
+                    <div key={item.title}>
 
-                  <div key={item.title}>
+                      <div
+                        className="sidebar-item"
+                        onClick={() => toggleMenu(item.title)}
+                      >
+                        <div className="sidebar-left">
+                          {Icon && (
+                            <Icon className="sidebar-icon" />
+                          )}
 
-                    <div
-                      className="sidebar-item"
-                      onClick={() => toggleMenu(item.title)}
-                    >
-
-                      <div className="sidebar-left">
-
-                        <Icon className="sidebar-icon" />
+                          {sidebarOpen && (
+                            <span>{item.title}</span>
+                          )}
+                        </div>
 
                         {sidebarOpen && (
-                          <span>{item.title}</span>
+                          openMenus[item.title] ? (
+                            <BsChevronDown />
+                          ) : (
+                            <BsChevronRight />
+                          )
                         )}
-
                       </div>
 
+                      {/* SUBMENU */}
+                      {sidebarOpen &&
+                        openMenus[item.title] && (
+                          <div className="submenu">
+
+                            {item.children.map((child) => {
+
+                              if (!child) {
+                                return null;
+                              }
+
+                              const ChildIcon = child.icon;
+
+                              return (
+                                <NavLink
+                                  key={child.title}
+                                  to={child.path}
+                                  className={({ isActive }) =>
+                                    isActive
+                                      ? "submenu-item active"
+                                      : "submenu-item"
+                                  }
+                                >
+                                  {ChildIcon && (
+                                    <ChildIcon />
+                                  )}
+
+                                  <span>
+                                    {child.title}
+                                  </span>
+                                </NavLink>
+                              );
+                            })}
+
+                          </div>
+                        )}
+                    </div>
+                  );
+                }
+
+                {/* =========================
+                    NORMAL MENU ITEM
+                ========================= */}
+                return (
+                  <NavLink
+                    key={item.title}
+                    to={item.path}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "sidebar-item active"
+                        : "sidebar-item"
+                    }
+                  >
+                    <div className="sidebar-left">
+
+                      {Icon && (
+                        <Icon className="sidebar-icon" />
+                      )}
+
                       {sidebarOpen && (
-                        openMenus[item.title]
-                          ? <BsChevronDown />
-                          : <BsChevronRight />
+                        <span>{item.title}</span>
                       )}
 
                     </div>
-
-                    {sidebarOpen &&
-                      openMenus[item.title] && (
-
-                        <div className="submenu">
-
-                          {item.children.map((child) => {
-
-                            const ChildIcon = child.icon;
-
-                            return (
-
-                              <NavLink
-                                key={child.title}
-                                to={child.path}
-                                className={({ isActive }) =>
-                                  isActive
-                                    ? "submenu-item active"
-                                    : "submenu-item"
-                                }
-                              >
-
-                                <ChildIcon />
-
-                                <span>
-                                  {child.title}
-                                </span>
-
-                              </NavLink>
-
-                            );
-
-                          })}
-
-                        </div>
-
-                      )}
-
-                  </div>
-
+                  </NavLink>
                 );
-
-              }
-
-              return (
-
-                <NavLink
-                  key={item.title}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "sidebar-item active"
-                      : "sidebar-item"
-                  }
-                >
-
-                  <div className="sidebar-left">
-
-                    <Icon className="sidebar-icon" />
-
-                    {sidebarOpen && (
-                      <span>{item.title}</span>
-                    )}
-
-                  </div>
-
-                </NavLink>
-
-              );
-
-            })}
-
-          </div>
-
-        ))}
+              })}
+            </div>
+          );
+        })}
 
       </div>
 
-      {/* Bottom */}
-
+      {/* =========================
+          SIDEBAR FOOTER
+      ========================= */}
       <div className="sidebar-footer">
 
         {sidebarOpen ? (
-
           <>
-
             <div className="user-card">
 
               <img
                 src="https://ui-avatars.com/api/?name=Mohd+Asif&background=2563eb&color=fff"
-                alt=""
+                alt="User"
               />
 
               <div>
-
                 <h4>Mohd Asif</h4>
-
                 <p>Administrator</p>
-
               </div>
 
             </div>
 
-            <div className="version-card">
-
+            {/* <div className="version-card">
               <small>HRMS PRO</small>
-
               <span>Version 1.0.0</span>
-
-            </div>
-
+            </div> */}
           </>
-
         ) : (
-
           <img
             className="mini-avatar"
             src="https://ui-avatars.com/api/?name=Mohd+Asif&background=2563eb&color=fff"
-            alt=""
+            alt="User"
           />
-
         )}
 
       </div>

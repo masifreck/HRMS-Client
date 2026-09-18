@@ -18,6 +18,14 @@ import Leave from "../pages/Leave/Leave";
 import ApplyLeave from "../pages/Leave/components/ApplyLeave";
 import LeaveType from "../pages/Master/LeaveType/LeaveType";
 import LeaveWorkflow from "../pages/Master/LeaveWorkflow/LeaveWorkflow";
+
+import Branch from "../pages/Master/Branch/Branch";
+import Designation from "../pages/Master/Designation/Designation";
+import Department from "../pages/Master/Department/Department";
+import Shift from "../pages/Master/Shift/Shift";
+import Payroll from "../pages/Payroll/Payroll";
+import Bank from "../pages/Master/Bank/Bank";
+
 function AppRoutes() {
 
     return (
@@ -67,14 +75,47 @@ function AppRoutes() {
   path="/leave/:id"
   element={<LeaveDetails />}
 />
-<Route
-  path="/masters/leave-type"
-  element={<LeaveType />}
-/>
+
 <Route
   path="/masters/leave-workflow"
   element={<LeaveWorkflow />}
 />
+
+<Route
+  path="/masters/branch"
+  element={<Branch />}
+/>
+
+<Route
+  path="/masters/department"
+  element={<Department />}
+/>
+
+<Route
+  path="/masters/designation"
+  element={<Designation />}
+/>
+
+<Route
+  path="/masters/shift"
+  element={<Shift />}
+/>
+
+<Route
+  path="/masters/leave-type"
+  element={<LeaveType />}
+/>
+
+<Route
+  path="/masters/leave-workflow"
+  element={<LeaveWorkflow />}
+/>
+
+<Route
+  path="/masters/bank"
+  element={<Bank />}
+/>
+<Route path="/payroll" element={<Payroll />} />
                 </Route>
 
             </Routes>

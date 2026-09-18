@@ -14,7 +14,7 @@ import LeaveSummary from "./components/LeaveSummary";
 import leaveData from "./components/LeaveData";
 import LeaveCalendar from "./components/LeaveCalendar";
 import "./Leave.css";
-
+import LeaveAssignment from "./components/LeaveAssignment";
 const Leave = () => {
   const navigate = useNavigate();
 
@@ -517,6 +517,7 @@ const Leave = () => {
 
       </section>
 <LeaveCalendar />
+<LeaveAssignment />
     </div>
   );
 };
