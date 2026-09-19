@@ -1,0 +1,308 @@
+/* =========================================================
+   REIMBURSEMENT TOOLBAR
+========================================================= */
+
+.reimbursement-toolbar {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8ebf0;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.reimbursement-toolbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.reimbursement-toolbar-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #172033;
+}
+
+.reimbursement-toolbar-subtitle {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #7b8494;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.reimbursement-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reimbursement-toolbar-btn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #e1e5eb;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reimbursement-toolbar-btn svg {
+  font-size: 15px;
+}
+
+.reset-btn {
+  color: #475467;
+}
+
+.reset-btn:hover {
+  background: #f8fafc;
+  border-color: #cfd5dd;
+}
+
+.export-btn {
+  color: #ffffff;
+  background: #172033;
+  border-color: #172033;
+}
+
+.export-btn:hover {
+  background: #27344a;
+  border-color: #27344a;
+}
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.reimbursement-filter-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 1.5fr)
+    repeat(3, minmax(150px, 1fr))
+    minmax(145px, 0.9fr)
+    minmax(145px, 0.9fr);
+
+  gap: 15px;
+  align-items: end;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.reimbursement-filter-search {
+  min-width: 0;
+}
+
+.reimbursement-filter-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475467;
+}
+
+.reimbursement-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.reimbursement-search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #98a2b3;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.reimbursement-search-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 0 12px 0 38px;
+  font-size: 13px;
+  color: #172033;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.reimbursement-search-input::placeholder {
+  color: #98a2b3;
+}
+
+.reimbursement-search-input:hover {
+  border-color: #c8ced8;
+}
+
+.reimbursement-search-input:focus {
+  border-color: #667085;
+  box-shadow: 0 0 0 3px rgba(102, 112, 133, 0.08);
+}
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.reimbursement-date-field {
+  min-width: 0;
+}
+
+.reimbursement-date-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.reimbursement-date-input:hover {
+  border-color: #c8ced8;
+}
+
+.reimbursement-date-input:focus {
+  border-color: #667085;
+  box-shadow: 0 0 0 3px rgba(102, 112, 133, 0.08);
+}
+
+/* =========================================================
+   CUSTOM DROPDOWN COMPATIBILITY
+========================================================= */
+
+.reimbursement-toolbar .dropdown-group {
+  min-width: 0;
+  margin: 0;
+}
+
+.reimbursement-toolbar .dropdown-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475467;
+}
+
+.reimbursement-toolbar .custom-dropdown {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1300px) {
+  .reimbursement-filter-grid {
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+  }
+
+  .reimbursement-filter-search {
+    grid-column: span 2;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .reimbursement-toolbar {
+    padding: 16px;
+  }
+
+  .reimbursement-toolbar-header {
+    align-items: flex-start;
+  }
+
+  .reimbursement-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reimbursement-filter-search {
+    grid-column: span 2;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .reimbursement-toolbar {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .reimbursement-toolbar-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .reimbursement-toolbar-title {
+    font-size: 16px;
+  }
+
+  .reimbursement-toolbar-subtitle {
+    font-size: 12px;
+  }
+
+  .reimbursement-toolbar-actions {
+    width: 100%;
+  }
+
+  .reimbursement-toolbar-btn {
+    flex: 1;
+  }
+
+  .reimbursement-filter-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .reimbursement-filter-search {
+    grid-column: auto;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .reimbursement-toolbar-actions {
+    flex-direction: column;
+  }
+
+  .reimbursement-toolbar-btn {
+    width: 100%;
+  }
+}

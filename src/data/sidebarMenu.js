@@ -17,7 +17,7 @@ import {
   BsFileEarmarkTextFill,
   BsBank,
   BsGearFill,
-  BsDiagram3Fill,
+  BsDiagram3Fill,BsReceipt
 } from "react-icons/bs";
 
 const sidebarMenu = [
@@ -121,7 +121,16 @@ const sidebarMenu = [
       },
     ],
   },
-
+{
+  section: "REIMBURSEMENTS",
+  items: [
+    {
+      title: "Reimbursements",
+      icon: BsReceipt,
+      path: "/reimbursements",
+    },
+  ],
+},
   // =========================
   // MASTERS
   // =========================

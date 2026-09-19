@@ -1,0 +1,292 @@
+/* =========================================================
+   PAYROLL TOOLBAR
+========================================================= */
+
+.payroll-toolbar {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 18px;
+
+  padding: 16px;
+
+  border: 1px solid #eaecf0;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.03);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.payroll-toolbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+}
+
+.payroll-toolbar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.payroll-toolbar-title-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #f2f4f7;
+  color: #344054;
+
+  font-size: 15px;
+}
+
+.payroll-toolbar-title h2 {
+  margin: 0;
+
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.payroll-toolbar-title p {
+  margin: 3px 0 0;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.payroll-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.payroll-toolbar-btn {
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 0 11px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.payroll-toolbar-btn svg {
+  font-size: 12px;
+}
+
+.payroll-reset-btn {
+  border: 1px solid #d0d5dd;
+
+  background: #ffffff;
+  color: #475467;
+}
+
+.payroll-reset-btn:hover {
+  background: #f8fafc;
+  border-color: #98a2b3;
+}
+
+.payroll-export-btn {
+  border: 1px solid #172033;
+
+  background: #172033;
+  color: #ffffff;
+}
+
+.payroll-export-btn:hover {
+  background: #27344a;
+  border-color: #27344a;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.payroll-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1.5fr)
+    repeat(4, minmax(145px, 1fr));
+
+  gap: 12px;
+
+  align-items: end;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.payroll-search-wrapper {
+  position: relative;
+
+  min-width: 0;
+}
+
+.payroll-search-wrapper .input-group {
+  width: 100%;
+}
+
+.payroll-search-wrapper .custom-input {
+  padding-right: 34px;
+}
+
+.payroll-search-icon {
+  position: absolute;
+
+  right: 12px;
+  bottom: 13px;
+
+  color: #98a2b3;
+
+  font-size: 13px;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   DROPDOWN ALIGNMENT
+========================================================= */
+
+.payroll-filter-grid .dropdown-group,
+.payroll-filter-grid .input-group {
+  min-width: 0;
+  width: 100%;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1250px) {
+  .payroll-filter-grid {
+    grid-template-columns:
+      repeat(3, minmax(180px, 1fr));
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .payroll-toolbar {
+    padding: 14px;
+  }
+
+  .payroll-toolbar-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .payroll-toolbar-actions {
+    width: 100%;
+  }
+
+  .payroll-toolbar-btn {
+    flex: 1;
+  }
+
+  .payroll-filter-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .payroll-toolbar {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .payroll-toolbar-title {
+    align-items: flex-start;
+  }
+
+  .payroll-toolbar-title-icon {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+
+    font-size: 14px;
+  }
+
+  .payroll-toolbar-title h2 {
+    font-size: 12px;
+  }
+
+  .payroll-toolbar-title p {
+    font-size: 9px;
+  }
+
+  .payroll-filter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .payroll-toolbar-actions {
+    gap: 8px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .payroll-toolbar-actions {
+    flex-direction: column;
+  }
+
+  .payroll-toolbar-btn {
+    width: 100%;
+    flex: none;
+  }
+}

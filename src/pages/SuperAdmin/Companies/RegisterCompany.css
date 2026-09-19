@@ -1,0 +1,276 @@
+.register-company-page {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+
+/* HEADER */
+
+.register-company-header {
+  margin-bottom: 20px;
+}
+
+.register-back-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #697383;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.register-back-button:hover {
+  color: #222b39;
+}
+
+.register-eyebrow {
+  color: #8b94a3;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
+.register-company-header h1 {
+  margin: 5px 0 0;
+  color: #171c26;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.register-company-header p {
+  margin: 6px 0 0;
+  color: #7b8491;
+  font-size: 12px;
+}
+
+
+/* FORM */
+
+.register-company-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* SECTION */
+
+.register-section {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e8ec;
+  border-radius: 11px;
+}
+
+.register-section-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 17px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.register-section-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f0f2f5;
+  color: #566274;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.register-users-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.register-section-header h2 {
+  margin: 0;
+  color: #303744;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.register-section-header p {
+  margin: 4px 0 0;
+  color: #969da8;
+  font-size: 10px;
+}
+
+
+/* GRID */
+
+.register-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.register-full {
+  grid-column: 1 / -1;
+}
+
+
+/* FIELD */
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-field label {
+  margin-bottom: 6px;
+  color: #454e5c;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.register-field label span {
+  margin-left: 2px;
+  color: #c24c4c;
+}
+
+.register-field input,
+.register-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dfe3e8;
+  border-radius: 7px;
+  outline: none;
+  padding: 0 10px;
+  background: #ffffff;
+  color: #303744;
+  font-family: inherit;
+  font-size: 11px;
+  transition: 0.18s ease;
+}
+
+.register-field input {
+  height: 38px;
+}
+
+.register-field textarea {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  resize: vertical;
+  min-height: 70px;
+}
+
+.register-field input:focus,
+.register-field textarea:focus {
+  border-color: #78869b;
+  box-shadow: 0 0 0 3px rgba(70, 85, 108, 0.06);
+}
+
+.register-field input::placeholder,
+.register-field textarea::placeholder {
+  color: #a4abb5;
+}
+
+
+/* MESSAGE */
+
+.register-error {
+  padding: 11px 13px;
+  border: 1px solid #f0d3d3;
+  border-radius: 8px;
+  background: #fff5f5;
+  color: #a54d4d;
+  font-size: 11px;
+}
+
+.register-success {
+  padding: 11px 13px;
+  border: 1px solid #cce8d8;
+  border-radius: 8px;
+  background: #f0faf4;
+  color: #2e7e53;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+}
+
+
+/* ACTIONS */
+
+.register-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 4px 0 10px;
+}
+
+.register-cancel,
+.register-submit {
+  height: 38px;
+  padding: 0 15px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-cancel {
+  border: 1px solid #dfe3e8;
+  background: #ffffff;
+  color: #596372;
+}
+
+.register-submit {
+  border: 0;
+  background: #182132;
+  color: #ffffff;
+}
+
+.register-submit:hover:not(:disabled) {
+  background: #253149;
+}
+
+.register-cancel:disabled,
+.register-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+  .register-company-page {
+    padding: 16px;
+  }
+
+  .register-section {
+    padding: 15px;
+  }
+
+  .register-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .register-full {
+    grid-column: auto;
+  }
+
+  .register-actions {
+    flex-direction: column-reverse;
+  }
+
+  .register-cancel,
+  .register-submit {
+    width: 100%;
+  }
+}

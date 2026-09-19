@@ -1,0 +1,670 @@
+/* =========================================================
+   REIMBURSEMENT TABLE
+========================================================= */
+
+.reimbursement-table-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8ebf0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.reimbursement-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.reimbursement-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reimbursement-table-wrapper::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.reimbursement-table-wrapper::-webkit-scrollbar-thumb {
+  background: #d0d5dd;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.reimbursement-table {
+  width: 100%;
+  min-width: 1180px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.reimbursement-table thead {
+  background: #f8fafc;
+}
+
+.reimbursement-table th {
+  padding: 13px 14px;
+  text-align: left;
+  border-bottom: 1px solid #eaecf0;
+
+  color: #667085;
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  white-space: nowrap;
+}
+
+.reimbursement-table td {
+  padding: 14px;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: middle;
+
+  color: #344054;
+  font-size: 12px;
+}
+
+.reimbursement-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.reimbursement-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+.reimbursement-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   CLAIM
+========================================================= */
+
+.reimbursement-claim-cell {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 125px;
+}
+
+.reimbursement-claim-id {
+  color: #344054;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reimbursement-attachment {
+  width: 21px;
+  height: 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #f2f4f7;
+  color: #667085;
+  font-size: 12px;
+}
+
+/* =========================================================
+   EMPLOYEE
+========================================================= */
+
+.reimbursement-employee-cell {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 180px;
+}
+
+.reimbursement-avatar {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #eef2f6;
+  color: #344054;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reimbursement-employee-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.reimbursement-employee-name {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 650;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reimbursement-employee-id {
+  color: #98a2b3;
+  font-size: 10px;
+}
+
+/* =========================================================
+   DEPARTMENT
+========================================================= */
+
+.reimbursement-department {
+  display: inline-block;
+  padding: 5px 8px;
+
+  background: #f8fafc;
+  border: 1px solid #eaecf0;
+  border-radius: 6px;
+
+  color: #475467;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   EXPENSE TYPE
+========================================================= */
+
+.reimbursement-expense-type {
+  color: #475467;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.reimbursement-date {
+  color: #667085;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.reimbursement-amount-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.reimbursement-amount {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reimbursement-approved-small {
+  color: #039855;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.reimbursement-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 8px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.reimbursement-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-pending {
+  background: #fff7e6;
+  color: #b54708;
+}
+
+.status-pending .reimbursement-status-dot {
+  background: #f79009;
+}
+
+.status-approved {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.status-approved .reimbursement-status-dot {
+  background: #12b76a;
+}
+
+.status-rejected {
+  background: #fff1f3;
+  color: #b42318;
+}
+
+.status-rejected .reimbursement-status-dot {
+  background: #f04438;
+}
+
+.status-paid {
+  background: #eef4ff;
+  color: #175cd3;
+}
+
+.status-paid .reimbursement-status-dot {
+  background: #2e90fa;
+}
+
+/* =========================================================
+   APPROVER
+========================================================= */
+
+.reimbursement-approver {
+  color: #475467;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.reimbursement-actions-header {
+  text-align: center !important;
+}
+
+.reimbursement-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 150px;
+}
+
+.reimbursement-action-btn {
+  width: 28px;
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.reimbursement-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.reimbursement-action-btn.view {
+  color: #475467;
+  background: #f8fafc;
+  border-color: #eaecf0;
+}
+
+.reimbursement-action-btn.view:hover {
+  background: #f2f4f7;
+}
+
+.reimbursement-action-btn.edit {
+  color: #6941c6;
+  background: #f9f5ff;
+  border-color: #e9d7fe;
+}
+
+.reimbursement-action-btn.edit:hover {
+  background: #f4ebff;
+}
+
+.reimbursement-action-btn.approve {
+  color: #027a48;
+  background: #ecfdf3;
+  border-color: #abefc6;
+}
+
+.reimbursement-action-btn.approve:hover {
+  background: #d1fadf;
+}
+
+.reimbursement-action-btn.reject {
+  color: #b42318;
+  background: #fff1f3;
+  border-color: #fecdca;
+}
+
+.reimbursement-action-btn.reject:hover {
+  background: #fee4e2;
+}
+
+.reimbursement-action-btn.paid {
+  color: #175cd3;
+  background: #eef4ff;
+  border-color: #b2ddff;
+}
+
+.reimbursement-action-btn.paid:hover {
+  background: #dbeafe;
+}
+
+.reimbursement-action-btn.delete {
+  color: #667085;
+  background: #f8fafc;
+  border-color: #eaecf0;
+}
+
+.reimbursement-action-btn.delete:hover {
+  color: #b42318;
+  background: #fff1f3;
+  border-color: #fecdca;
+}
+
+.reimbursement-action-btn.more {
+  color: #98a2b3;
+}
+
+.reimbursement-action-btn.more:hover {
+  color: #475467;
+  background: #f2f4f7;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.reimbursement-table-empty {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.reimbursement-empty-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 14px;
+  background: #f2f4f7;
+
+  color: #667085;
+  font-size: 24px;
+}
+
+.reimbursement-table-empty h3 {
+  margin: 0 0 6px;
+
+  color: #344054;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.reimbursement-table-empty p {
+  margin: 0;
+
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+/* =========================================================
+   MOBILE LIST
+========================================================= */
+
+.reimbursement-mobile-list {
+  display: none;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .reimbursement-table {
+    min-width: 1050px;
+  }
+
+  .reimbursement-table th,
+  .reimbursement-table td {
+    padding: 12px 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .reimbursement-table-wrapper {
+    display: none;
+  }
+
+  .reimbursement-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: #f8fafc;
+  }
+
+  .reimbursement-mobile-card {
+    background: #ffffff;
+    border: 1px solid #e8ebf0;
+    border-radius: 11px;
+    padding: 14px;
+  }
+
+  .reimbursement-mobile-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .reimbursement-mobile-claim {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #344054;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .mobile-attachment-icon {
+    color: #667085;
+    font-size: 12px;
+  }
+
+  .reimbursement-mobile-date {
+    margin-top: 4px;
+    color: #98a2b3;
+    font-size: 10px;
+  }
+
+  .reimbursement-mobile-employee {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+  }
+
+  .reimbursement-mobile-meta {
+    margin-top: 3px;
+    color: #98a2b3;
+    font-size: 10px;
+  }
+
+  .reimbursement-mobile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    padding: 12px 0;
+    border-top: 1px solid #f0f2f5;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .reimbursement-mobile-info-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .reimbursement-mobile-info-grid span {
+    color: #98a2b3;
+    font-size: 9px;
+    font-weight: 500;
+  }
+
+  .reimbursement-mobile-info-grid strong {
+    color: #344054;
+    font-size: 11px;
+    font-weight: 650;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .reimbursement-mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-top: 12px;
+    overflow-x: auto;
+  }
+
+  .mobile-action {
+    height: 32px;
+    padding: 0 9px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #e4e7ec;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #475467;
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+  }
+
+  .mobile-action.view {
+    background: #f8fafc;
+  }
+
+  .mobile-action.edit {
+    color: #6941c6;
+    background: #f9f5ff;
+    border-color: #e9d7fe;
+  }
+
+  .mobile-action.approve {
+    color: #027a48;
+    background: #ecfdf3;
+    border-color: #abefc6;
+  }
+
+  .mobile-action.reject {
+    color: #b42318;
+    background: #fff1f3;
+    border-color: #fecdca;
+  }
+
+  .mobile-action.paid {
+    color: #175cd3;
+    background: #eef4ff;
+    border-color: #b2ddff;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .reimbursement-mobile-card {
+    padding: 12px;
+  }
+
+  .reimbursement-mobile-info-grid {
+    gap: 8px;
+  }
+
+  .reimbursement-mobile-actions {
+    gap: 5px;
+  }
+
+  .mobile-action {
+    padding: 0 8px;
+    font-size: 9px;
+  }
+
+  .reimbursement-status {
+    font-size: 9px;
+    padding: 4px 6px;
+  }
+}

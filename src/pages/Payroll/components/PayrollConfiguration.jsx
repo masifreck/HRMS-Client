@@ -2,16 +2,17 @@ import React, { useMemo, useState } from "react";
 import {
   BsCalculator,
   BsCheckCircleFill,
-  BsChevronDown,
   BsCurrencyRupee,
   BsDashCircleFill,
   BsGearFill,
+  BsGraphUp,
   BsPencilSquare,
   BsPeopleFill,
   BsPlusLg,
   BsShieldCheck,
   BsTrash,
   BsXLg,
+  
 } from "react-icons/bs";
 
 import "./PayrollConfiguration.css";

@@ -1,0 +1,243 @@
+.sa-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f6f8;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sa-sidebar {
+  width: 230px;
+  flex-shrink: 0;
+  background: #172033;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sa-sidebar-header {
+  height: 68px;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.sa-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #172033;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.sa-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.sa-brand strong {
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+.sa-brand span {
+  margin-top: 2px;
+  color: #9ca8bb;
+  font-size: 9px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.sa-sidebar-section {
+  padding: 22px 18px 8px;
+  color: #78859a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sa-navigation {
+  padding: 0 10px;
+}
+
+.sa-nav-item {
+  min-height: 40px;
+  padding: 0 10px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #aeb8c9;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 12px;
+  transition: 0.18s ease;
+}
+
+.sa-nav-item:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.06);
+}
+
+.sa-nav-item-active {
+  color: #ffffff;
+  background: rgba(255,255,255,0.1);
+}
+
+.sa-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.sa-sidebar-bottom {
+  margin-top: auto;
+  padding: 10px;
+}
+
+.sa-admin-info {
+  margin-top: 12px;
+  padding: 11px 9px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.sa-admin-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3d4b63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sa-admin-info > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sa-admin-info strong {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.sa-admin-info span {
+  margin-top: 2px;
+  color: #8793a7;
+  font-size: 8px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.sa-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.sa-topbar {
+  height: 68px;
+  padding: 0 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8eaed;
+  display: flex;
+  align-items: center;
+}
+
+.sa-topbar-title {
+  color: #4e5765;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sa-menu-button,
+.sa-mobile-close {
+  display: none;
+}
+
+.sa-main-content {
+  min-width: 0;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 760px) {
+
+  .sa-sidebar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+  }
+
+  .sa-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sa-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(10,15,25,0.45);
+  }
+
+  .sa-mobile-close {
+    margin-left: auto;
+    display: flex;
+    border: 0;
+    background: transparent;
+    color: #9ca8bb;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .sa-menu-button {
+    display: flex;
+    border: 0;
+    background: transparent;
+    color: #444e5d;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .sa-topbar {
+    padding: 0 16px;
+  }
+}

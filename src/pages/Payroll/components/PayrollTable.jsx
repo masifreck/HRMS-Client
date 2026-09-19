@@ -279,13 +279,9 @@ const PayrollTable = ({
                       <div className="payroll-actions">
 
                         <button
-                          type="button"
-                          className="payroll-action-btn"
-                          title="View Payroll"
-                          onClick={() =>
-                            onView?.(employee)
-                          }
-                        >
+  onClick={() => onPayslip(item)}
+  title="View Payslip"
+>
                           <BsEye />
                         </button>
 
